@@ -12,6 +12,10 @@
 
 ## Lefteri Kapnisakis
 
-### date x
+### 5-19-23
 
-info
+- Sat with David and also messed with test file
+
+### 5-22-23
+
+- 
