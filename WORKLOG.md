@@ -18,6 +18,7 @@
 
 ### 5-22-23
 
+
 - Got printing in binary of audio file working
 - Found out wav is 44 byte header.
 
