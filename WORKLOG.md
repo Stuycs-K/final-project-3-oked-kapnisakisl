@@ -18,4 +18,4 @@
 
 ### 5-22-23
 
-- 
+- Discovered how to output test file in binary
