@@ -18,4 +18,10 @@
 
 ### 5-22-23
 
-- Discovered how to output test file in binary
+
+- Got printing in binary of audio file working
+- Found out wav is 44 byte header.
+
+### 5-23-23
+
+- Modified bits at end of every 8 bits, but takes forver because string array is treated like string, which I wanted so i could print but very annoying.
