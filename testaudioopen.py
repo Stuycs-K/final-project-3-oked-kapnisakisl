@@ -1,11 +1,13 @@
-from bitstring import BitArray
+# from bitstring import BitArray
+# import sys
+
 
 with open('Bruh_Sound_Effect.wav', 'rb') as f:
     data = f.read()
 
-datahex = data.hex()
+print(data[3] >> 4,'\n')
+print(data)
 
-#print(data)
+# datastr = bin(int.from_bytes(data, byteorder=sys.byteorder))
 
-test = BitArray(hex=datahex)
-print(test.bin)
+# print(datastr)
