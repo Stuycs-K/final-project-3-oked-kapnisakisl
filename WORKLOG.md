@@ -28,3 +28,8 @@
 ### 5-23-23
 
 - Modified bits at end of every 8 bits, but takes forver because string array is treated like string, which I wanted so i could print but very annoying.
+
+### 5-24-23
+
+- Switched back to byte array? instead of bit array, and instead of just using bin()
+- Started on trying to figure out encoding scheme, and using & to clear last 3 bits.
