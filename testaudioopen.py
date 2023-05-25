@@ -43,6 +43,10 @@ for x in message:
             print("RAN OUT OF ENCODING SPACE!!!!!!!!!!!")
         #Go through every 2 bits, writing, then shifting left(?) 2
 
+#Now we need to add stop codon(s)
+print(ticker)
+for i in range(ticker,len(data)):
+    data[i] = (data[i] ^ 4)
 #for x in range( HEADER_LEN,len(data)):
 #    print("x:",x,"bin:",bin(outdata[x]))
 
