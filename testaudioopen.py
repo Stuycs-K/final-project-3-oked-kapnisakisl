@@ -1,12 +1,37 @@
 # from bitstring import BitArray
 # import sys
 
-
+message = "hi!"
+messagebytes = bytearray(message,'utf-8')
 with open('Bruh_Sound_Effect.wav', 'rb') as f:
     data = f.read()
+    
+print(data[3])
+print(bin(data[3]))
 
-print(data[3] >> 4,'\n')
-print(data)
+dataray = bytearray(data)
+print(dataray[3])
+#dataray[3] = 248
+#print("testing!!")
+#print(dataray[3])
+#print(bin(dataray[3]))
+#this shows the bytes are 8 bits (duh) but it doesnt print leading 0s.
+
+#print(data)
+outdata = data
+for i in range (50,len(data)):
+    #i represents the byte we are on.
+    byte = data[i]
+    outdata = (data[i] & 248)#I think 248 is right? all but last 3 on
+    for b in range (0,8):# 0-7, not sure if this will work?
+        #data[i]
+#We need to figure out encoding scheme here.
+    #outdata = data[i]
+
+
+
+#And it with all but last bit on, then or it with what we want. And should clear, or should add.
+
 
 # datastr = bin(int.from_bytes(data, byteorder=sys.byteorder))
 
