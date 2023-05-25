@@ -36,5 +36,5 @@
 
 ### 5-25-23
 
-- Wrote encoding into data, no way to check if it works but code runs
+- Wrote encoding into data, no way to decode yet but code runs, prints look good
 - Discussed actual process with David, sorted out which ideas to use
