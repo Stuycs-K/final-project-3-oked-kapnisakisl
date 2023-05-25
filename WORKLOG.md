@@ -33,3 +33,8 @@
 
 - Switched back to byte array? instead of bit array, and instead of just using bin()
 - Started on trying to figure out encoding scheme, and using & to clear last 3 bits.
+
+### 5-25-23
+
+- Wrote encoding into data, no way to check if it works but code runs
+- Discussed actual process with David, sorted out which ideas to use
