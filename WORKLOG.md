@@ -18,6 +18,11 @@
 
 - Discussed actual process with Lefteri, sorted out which ideas to use.
 
+### 5-26-23
+
+-Improved readability of current code, made changes to minimize effects of stop codon.
+-Worked with Lefteri on plans for decode portion.
+
 ## Lefteri Kapnisakis
 
 ### 5-19-23
