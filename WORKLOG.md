@@ -14,6 +14,10 @@
 
 - Found a better way to print/modify audio file binary.
 
+### 5-25-23
+
+- Discussed actual process with Lefteri, sorted out which ideas to use.
+
 ## Lefteri Kapnisakis
 
 ### 5-19-23
@@ -33,3 +37,8 @@
 
 - Switched back to byte array? instead of bit array, and instead of just using bin()
 - Started on trying to figure out encoding scheme, and using & to clear last 3 bits.
+
+### 5-25-23
+
+- Wrote encoding into data, no way to decode yet but code runs, prints look good
+- Discussed actual process with David, sorted out which ideas to use

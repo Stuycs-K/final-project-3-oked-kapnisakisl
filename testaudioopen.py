@@ -1,57 +1,51 @@
 # from bitstring import BitArray
 # import sys
 
-message = "hi!"
+###GLOBAL VARIABLES!!!
+HEADER_LEN = 200
+
+#Mr k suggestion demonstrate audio quality difference from 1->2 -> 3 -> 4 bytes of payload
+message = "hzi!"
 messagebytes = bytearray(message,'utf-8')
+
+print("first letter ascii:", messagebytes[0])
 with open('Bruh_Sound_Effect.wav', 'rb') as f:
     data = f.read()
-    
-print(data[3])
-print(bin(data[3]))
 
-dataray = bytearray(data)
-print(dataray[3])
-#dataray[3] = 248
-#print("testing!!")
-#print(dataray[3])
-#print(bin(dataray[3]))
-#this shows the bytes are 8 bits (duh) but it doesnt print leading 0s.
+data = bytearray(data)
+for i in range (HEADER_LEN,len(data)):
+    #i represents the bytewe are on.
+    data[i] = (data[i] & 248)#I think 248 is right? all but last 3 on
+    #print("preand:",bin(data[i]),"postand:",bin(data[i]))
+ticker = HEADER_LEN
+for x in message:
+    message_byte = ord(x)
+    print("bin x:",bin(message_byte))
+    for z in range (0,4):
+        message_fragment = (message_byte & (64 + 128))
 
-#print(data)
-outdata = data
-for i in range (50,len(data)):
-    #i represents the byte we are on.
-    byte = data[i]
-    outdata = (data[i] & 248)#I think 248 is right? all but last 3 on
-    for b in range (0,8):# 0-7, not sure if this will work?
-        #data[i]
-#We need to figure out encoding scheme here.
-    #outdata = data[i]
+        message_byte = message_byte << 2#Move the message_byte we are reading left 2 so we can read next 2
 
+        message_fragment = (message_fragment >> 5) # Right now, we are reading first 2 bits (bits on left.) so looks like 11000000. Move all the way to the right, so aligned for write
 
+        print("old data:",format((data[ticker]), '#010b'),end=' ')
 
-#And it with all but last bit on, then or it with what we want. And should clear, or should add.
+        data[ticker] = (data[ticker] ^ message_fragment)#write now correctly shifted data into data
 
+        print("new data:",format((data[ticker]),'#010b')) # format just keeps leading 0's same as bin() otherwise
 
-# datastr = bin(int.from_bytes(data, byteorder=sys.byteorder))
+        ticker += 1
 
-# print(datastr)
+        if(ticker >= len(data)):
+            print("RAN OUT OF ENCODING SPACE!!!!!!!!!!!")
+        #Go through every 2 bits, writing, then shifting left(?) 2
 
-#test = BitArray(hex=datahex)
-#print(test.bin)
-#print(len(test.bin))
+#Now we need to add stop codon(s)
+print(ticker)
+for i in range(ticker,len(data)):
+    data[i] = (data[i] | 1)
+#for x in range( HEADER_LEN,len(data)):
+#    print("x:",x,"bin:",bin(outdata[x]))
 
-#Testing writing an encode, encountering some issues with the fact that we cant
-#figure out header length but going for anyway assuming 46 bytes.
-
-#i = (46 * 8) #magic nums for length of header
-
-#while(i < len(test.bin)):
-#    test[i] = True
-#    i+=8
- #   if(i % (8*500) == 0):
-#        print(i / len(test.bin))
-
-#print("===================")
-#print(test.bin)
-
+with open('Bruh_Sound_Effect_encoded2.wav', 'wb') as f:
+    f.write(data)
