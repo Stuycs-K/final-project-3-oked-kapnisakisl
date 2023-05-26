@@ -42,3 +42,7 @@
 
 - Wrote encoding into data, no way to decode yet but code runs, prints look good
 - Discussed actual process with David, sorted out which ideas to use
+
+### 5-26-23
+
+-Worked with David, moved codon to least significant bit to reduce static, now just need decode then can move on to more complex things
