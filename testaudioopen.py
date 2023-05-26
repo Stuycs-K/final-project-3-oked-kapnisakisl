@@ -26,7 +26,7 @@ for x in message:
 
         message_byte = message_byte << 2#Move the message_byte we are reading left 2 so we can read next 2
 
-        message_fragment = (message_fragment >> 6) # Right now, we are reading first 2 bits (bits on left.) so looks like 11000000. Move all the way to the right, so aligned for write
+        message_fragment = (message_fragment >> 5) # Right now, we are reading first 2 bits (bits on left.) so looks like 11000000. Move all the way to the right, so aligned for write
 
         print("old data:",format((data[ticker]), '#010b'),end=' ')
 
@@ -43,9 +43,9 @@ for x in message:
 #Now we need to add stop codon(s)
 print(ticker)
 for i in range(ticker,len(data)):
-    data[i] = (data[i] | 4)
+    data[i] = (data[i] | 1)
 #for x in range( HEADER_LEN,len(data)):
 #    print("x:",x,"bin:",bin(outdata[x]))
 
-with open('Bruh_Sound_Effect_encoded.wav', 'wb') as f:
+with open('Bruh_Sound_Effect_encoded2.wav', 'wb') as f:
     f.write(data)
