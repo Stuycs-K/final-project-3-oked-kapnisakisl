@@ -2,7 +2,7 @@
 # import sys
 
 ###GLOBAL VARIABLES!!!
-HEADER_LEN = 50
+HEADER_LEN = 200
 
 #Mr k suggestion demonstrate audio quality difference from 1->2 -> 3 -> 4 bytes of payload
 message = "hzi!"
@@ -46,3 +46,6 @@ for i in range(ticker,len(data)):
     data[i] = (data[i] | 4)
 #for x in range( HEADER_LEN,len(data)):
 #    print("x:",x,"bin:",bin(outdata[x]))
+
+with open('Bruh_Sound_Effect_encoded.wav', 'wb') as f:
+    f.write(data)
