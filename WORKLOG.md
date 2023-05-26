@@ -14,6 +14,10 @@
 
 - Found a better way to print/modify audio file binary.
 
+### 5-25-23
+
+- Discussed actual process with Lefteri, sorted out which ideas to use.
+
 ## Lefteri Kapnisakis
 
 ### 5-19-23
