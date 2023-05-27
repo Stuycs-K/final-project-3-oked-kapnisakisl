@@ -3,9 +3,10 @@
 
 ###GLOBAL VARIABLES!!!
 HEADER_LEN = 200
+NUMBER_OF_BITS = 2
 
-#Mr k suggestion demonstrate audio quality difference from 1->2 -> 3 -> 4 bytes of payload
-message = "hzi!"
+#Mr k suggestion demonstrate audio quality difference from 1->2->4 bits of payload
+message = "hello there!"
 messagebytes = bytearray(message,'utf-8')
 
 print("first letter ascii:", messagebytes[0])
@@ -15,18 +16,18 @@ with open('Bruh_Sound_Effect.wav', 'rb') as f:
 data = bytearray(data)
 for i in range (HEADER_LEN,len(data)):
     #i represents the bytewe are on.
-    data[i] = (data[i] & 248)#I think 248 is right? all but last 3 on
-    #print("preand:",bin(data[i]),"postand:",bin(data[i]))
+    data[i] = (data[i] & (255 - (pow(2, NUMBER_OF_BITS+1) -1)))#I think this is right? all but last #ofbits+1 on
+
 ticker = HEADER_LEN
 for x in message:
     message_byte = ord(x)
     print("bin x:",bin(message_byte))
-    for z in range (0,4):
+    for z in range (0,(8/NUMBER_OF_BITS)):
         message_fragment = (message_byte & (64 + 128))
 
-        message_byte = message_byte << 2#Move the message_byte we are reading left 2 so we can read next 2
+        message_byte = message_byte << NUMBER_OF_BITS#Move the message_byte we are reading left #ofbits so we can read next #ofbits
 
-        message_fragment = (message_fragment >> 5) # Right now, we are reading first 2 bits (bits on left.) so looks like 11000000. Move all the way to the right, so aligned for write
+        message_fragment = (message_fragment >> (8-(NUMBER_OF_BITS+1))) # Right now, we are reading first bits (bits on left.) so looks like 11000000. Move all the way to the right, so aligned for write
 
         print("old data:",format((data[ticker]), '#010b'),end=' ')
 
