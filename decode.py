@@ -9,8 +9,8 @@ with open('The-Neighbourhood-Softcore_encoded1.wav', 'rb') as f:
 
 data = bytearray(data)
 message_binary = bytearray(len(data)//(8//NUMBER_OF_BITS) + 100)
-print(len(data)) #37066884
-print(len(message_binary)) #4633460
+# print(len(data)) #37066884
+# print(len(message_binary)) #4633460
 
 message_ticker = 0
 data_byte = HEADER_LEN
@@ -24,18 +24,21 @@ while(data_byte < len(data)-8):
 
         #places each fragment into the correct position of the message binary
         if (shifts_remain_in_messagebyte > 0):
-            message_binary[message_ticker] | (data_fragment << shifts_remain_in_messagebyte)
+            message_binary[message_ticker] = message_binary[message_ticker] | (data_fragment << shifts_remain_in_messagebyte)
         
         if (shifts_remain_in_messagebyte == 0):
-            message_binary[message_ticker] | (data_fragment)
+            message_binary[message_ticker] = message_binary[message_ticker] | (data_fragment)
 
         if (shifts_remain_in_messagebyte < 0):
-            message_binary[message_ticker] | (data_fragment >> (shifts_remain_in_messagebyte*-1))
+            message_binary[message_ticker] = message_binary[message_ticker] | (data_fragment >> (shifts_remain_in_messagebyte*-1))
 
         shifts_remain_in_messagebyte -= 1
         data_byte += 1
     
+    # print(message_binary[message_ticker])
     message_ticker += 1
 
-with open('decoded_text.txt', 'w') as f:
-    f.write(message)
+# print(message_binary)
+
+with open('decoded_text.txt', 'wb') as f:
+    f.write(message_binary)
