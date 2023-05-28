@@ -23,6 +23,13 @@
 -Improved readability of current code, made changes to minimize effects of stop codon.
 -Worked with Lefteri on plans for decode portion.
 
+### 5-27-23
+
+- Cleaned up code in encode
+- Added a MUCH larger audio and message file, allowed file imports/exports for both
+- Added decode file, made it decode whatever is in the encoded audio file (mindblowing)
+- Made it possible to encode/decode using 1, 2, and 4 bit storage variations (2, 3, 5 counting the stop codon)
+
 ## Lefteri Kapnisakis
 
 ### 5-19-23
@@ -50,4 +57,4 @@
 
 ### 5-26-23
 
--Worked with David, moved codon to least significant bit to reduce static, now just need decode then can move on to more complex things
+- Worked with David, moved codon to least significant bit to reduce static, now just need decode then can move on to more complex things
