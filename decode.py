@@ -40,5 +40,5 @@ while(data_byte < len(data)-8):
 
 # print(message_binary)
 
-with open('decoded_text.txt', 'wb') as f:
-    f.write(message_binary)
+with open('decoded_text.txt', 'w') as f:
+    f.write(message_binary.decode('utf-8', errors='ignore'))
