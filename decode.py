@@ -14,7 +14,7 @@ message_binary = bytearray(len(data)//(8//NUMBER_OF_BITS) + 100)
 
 message_ticker = 0
 data_byte = HEADER_LEN
-while(data_byte < len(data)-8):
+while(data_byte < len(data)-8 and (data[data_byte] & 1) != 1):
 
     # print("bin x:",bin(data_byte))
     shifts_remain_in_messagebyte = 6
@@ -41,4 +41,4 @@ while(data_byte < len(data)-8):
 # print(message_binary)
 
 with open('decoded_text.txt', 'w') as f:
-    f.write(message_binary.decode('utf-8', errors='ignore'))
+    f.write(message_binary.rstrip(b'\x00').decode('utf-8', errors='ignore'))
