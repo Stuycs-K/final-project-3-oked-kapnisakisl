@@ -8,13 +8,19 @@ NUMBER_OF_BITS = 2
 #Mr k suggestion demonstrate audio quality difference from 1->2->4 bits of payload
 message = "hello there!"
 messagebytes = bytearray(message,'utf-8')
+print(len(messagebytes))
 
 print("first letter ascii:", messagebytes[0])
 with open('Bruh_Sound_Effect.wav', 'rb') as f:
     data = f.read()
 
 data = bytearray(data)
-for i in range (HEADER_LEN,len(data)):
+
+#if the amount of space we need exceeds the size of the file, yell at the user, proceed if not
+if (HEADER_LEN+len(messagebytes)*(8//NUMBER_OF_BITS) >= len(data)):
+    raise Exception("Not enough space!!!!!!!!!!!!1")
+
+for i in range (HEADER_LEN,HEADER_LEN+len(messagebytes)*(8//NUMBER_OF_BITS)):
     #i represents the bytewe are on.
     data[i] = (data[i] & (255 - (pow(2, NUMBER_OF_BITS+1) -1)))#I think this is right? all but last #ofbits+1 on
 
@@ -22,8 +28,9 @@ ticker = HEADER_LEN
 for x in message:
     message_byte = ord(x)
     print("bin x:",bin(message_byte))
-    for z in range (0,(8/NUMBER_OF_BITS)):
-        message_fragment = (message_byte & (64 + 128))
+    for z in range (0,(8//NUMBER_OF_BITS)):
+
+        message_fragment = (message_byte & int((((2)**(NUMBER_OF_BITS*-1))-1)*(-256)))#takes the relevantly sized piece of the message we need to place in the audio binary
 
         message_byte = message_byte << NUMBER_OF_BITS#Move the message_byte we are reading left #ofbits so we can read next #ofbits
 
@@ -37,13 +44,9 @@ for x in message:
 
         ticker += 1
 
-        if(ticker >= len(data)):
-            print("RAN OUT OF ENCODING SPACE!!!!!!!!!!!")
-        #Go through every 2 bits, writing, then shifting left(?) 2
-
 #Now we need to add stop codon(s)
 print(ticker)
-for i in range(ticker,len(data)):
+for i in range(ticker,ticker+1):
     data[i] = (data[i] | 1)
 #for x in range( HEADER_LEN,len(data)):
 #    print("x:",x,"bin:",bin(outdata[x]))
