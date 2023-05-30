@@ -48,6 +48,8 @@ for x in message:
 #Now we need to add stop codon
 for i in range(ticker,ticker+1):
     data[i] = (data[i] | 1)
+splitname = filetoencode.split(".",1)#Split only once, hopefully at the .wav or whatever the format was
 
-with open('The-Neighbourhood-Softcore_encoded1.wav', 'wb') as f:
+outname = splitname[0] + "_encoded1" + "." + splitname[1]#Should allow to keep file format, weird behavior if periods in name.
+with open(outname, 'wb') as f:
     f.write(data)
