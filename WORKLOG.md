@@ -14,6 +14,22 @@
 
 - Found a better way to print/modify audio file binary.
 
+### 5-25-23
+
+- Discussed actual process with Lefteri, sorted out which ideas to use.
+
+### 5-26-23
+
+-Improved readability of current code, made changes to minimize effects of stop codon.
+-Worked with Lefteri on plans for decode portion.
+
+### 5-27-23
+
+- Cleaned up code in encode
+- Added a MUCH larger audio and message file, allowed file imports/exports for both
+- Added decode file, made it decode whatever is in the encoded audio file (mindblowing)
+- Made it possible to encode/decode using 1, 2, and 4 bit storage variations (2, 3, 5 counting the stop codon)
+
 ## Lefteri Kapnisakis
 
 ### 5-19-23
@@ -38,3 +54,11 @@
 
 - Wrote encoding into data, no way to decode yet but code runs, prints look good
 - Discussed actual process with David, sorted out which ideas to use
+
+### 5-26-23
+
+- Worked with David, moved codon to least significant bit to reduce static, now just need decode then can move on to more complex things
+
+### 5-30-23
+
+- Made a simple makefile, added argument inputs for encode and decode.
