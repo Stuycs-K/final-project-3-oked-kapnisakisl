@@ -58,3 +58,7 @@
 ### 5-26-23
 
 - Worked with David, moved codon to least significant bit to reduce static, now just need decode then can move on to more complex things
+
+### 5-30-23
+
+- Made a simple makefile, added argument inputs for encode and decode.

@@ -1,10 +1,19 @@
+import sys
 ###GLOBAL VARIABLES!!!
 HEADER_LEN = 260000
 NUMBER_OF_BITS = 1
 
 message = ""
+if(len(sys.argv) > 3):# default is 1 when no args, 2 means one thing, so need 3
+    print("Args entered incorrectly; Should be: make decode ARGS=\"<FILE> <FILETOWRITE> <OPTIONALBITS>\"")
+filetodecode = sys.argv[1]
+filetowrite = sys.argv[2]
+if(len(sys.argv) == 4):
+    NUMBER_OF_BITS = int(sys.argv[3])
+    print("Setting # bits to",int(sys.argv[3]))
 
-with open('The-Neighbourhood-Softcore_encoded1.wav', 'rb') as f:
+
+with open(filetodecode, 'rb') as f:
     data = f.read()
 
 data = bytearray(data)
@@ -34,5 +43,5 @@ while(data_byte < len(data)-8 and (data[data_byte] & 1) != 1):
     
     message_ticker += 1
 
-with open('decoded_text.txt', 'w') as f:
+with open(filetowrite, 'w') as f:
     f.write(message_binary.rstrip(b'\x00').decode('utf-8', errors='ignore'))

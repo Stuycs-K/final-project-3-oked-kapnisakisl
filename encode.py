@@ -1,14 +1,23 @@
+import sys
 ###GLOBAL VARIABLES!!!
 HEADER_LEN = 260000
 NUMBER_OF_BITS = 1
 
 #Mr k suggestion demonstrate audio quality difference from 1->2->4 bits of payload
-with open('Walkable_City.txt', 'r') as f:
+if(len(sys.argv) > 4):# default is 1 when no args, 2 means one thing, so need 3
+    print("Args entered incorrectly; Should be: make encode ARGS=\"<MESSAGEFILE> <TARGETFILE> <OPTIONALBITS>\"")
+filetoencode = sys.argv[2]
+messagetoencode = sys.argv[1]
+if(len(sys.argv) == 4):
+    NUMBER_OF_BITS = int(sys.argv[3])
+    print("Setting # bits to",int(sys.argv[3]))
+
+with open(messagetoencode, 'r') as f:
     message = f.read()
 
 messagebytes = bytearray(message,'utf-8')
 
-with open('The-Neighbourhood-Softcore.wav', 'rb') as f:
+with open(filetoencode, 'rb') as f:
     data = f.read()
 
 data = bytearray(data)
