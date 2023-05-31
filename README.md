@@ -1,4 +1,4 @@
-# Audio Steganography Implementation/Demonstration
+# Steg-Ear-Saurus
 David Oke, Lefteri Kapnisakis
 
 ## About

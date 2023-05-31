@@ -30,6 +30,10 @@
 - Added decode file, made it decode whatever is in the encoded audio file (mindblowing)
 - Made it possible to encode/decode using 1, 2, and 4 bit storage variations (2, 3, 5 counting the stop codon)
 
+### 5-31-23
+
+-Added project name
+
 ## Lefteri Kapnisakis
 
 ### 5-19-23
