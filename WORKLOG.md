@@ -66,3 +66,11 @@
 ### 5-30-23
 
 - Made a simple makefile, added argument inputs for encode and decode.
+
+### 5-31-23
+
+- I was absent.
+
+### 6-1-23
+
+- Slightly changed arg detection, worked on README and presentation.
