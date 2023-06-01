@@ -2,9 +2,8 @@ import sys
 ###GLOBAL VARIABLES!!!
 HEADER_LEN = 260000
 NUMBER_OF_BITS = 1
-
 #Mr k suggestion demonstrate audio quality difference from 1->2->4 bits of payload
-if(len(sys.argv) > 4):# default is 1 when no args, 2 means one thing, so need 3
+if(len(sys.argv) > 4 or len(sys.argv) < 3):# default is 1 when no args, 2 means one thing, so need 3
     print("Args entered incorrectly; Should be: make encode ARGS=\"<MESSAGEFILE> <TARGETFILE> <OPTIONALBITS>\"")
 filetoencode = sys.argv[2]
 messagetoencode = sys.argv[1]
@@ -50,6 +49,6 @@ for i in range(ticker,ticker+1):
     data[i] = (data[i] | 1)
 splitname = filetoencode.split(".",1)#Split only once, hopefully at the .wav or whatever the format was
 
-outname = splitname[0] + "_encoded" + str(NUMBER_OF_BITS) + "." + splitname[1]#Should allow to keep file format, weird behavior if periods in name.
+outname = splitname[0] + "_encoded" +str(NUMBER_OF_BITS)+ "." + splitname[1]#Should allow to keep file format, weird behavior if periods in name.
 with open(outname, 'wb') as f:
     f.write(data)
