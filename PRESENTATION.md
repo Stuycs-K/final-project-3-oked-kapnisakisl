@@ -1,12 +1,15 @@
 ## outline
 
-- Explain the basics of audio stegonography
-- Mention different methods (are we doing the overall explanation or is the other group?)
-- Demonstrate our program and encoding / decoding using 1 bit so they cant really hear it. 
-- Mabye from before hand make visualization of audio differences using sexisting software to show visually the difference in where info is hidden
+Explain the basics of audio steganography
+- What is audio steg? (hiding things)
+- How does LSB work? (draw/type out how bits are placed in the file to put message together)
+- Mention other methods (shoutout echo hiding! henry/perry!)
 
-## part 2
+Demonstrate the process using our code
+- Play encoded version (1 bit) of Softcore, play non-encoded version and show how unnoticeable it is
+- Show how to compile encode/decode, bit stuff as well (show that the entire book went through the process unscathed! (except apostrophes oooops))
+- Show audio quality difference between 1/2/4 bit versions
+- Use Audacity to show differences in spectrogram between 1/2/4/non-enc versions
 
-- Show audio quality difference with different number of payload bits
-- Mabye explain why we need the extra bit to indicate stopping? or do people remember this from image steg
--give them hw
+HW
+-make an assignment
