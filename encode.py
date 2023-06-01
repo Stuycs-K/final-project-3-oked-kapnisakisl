@@ -50,6 +50,6 @@ for i in range(ticker,ticker+1):
     data[i] = (data[i] | 1)
 splitname = filetoencode.split(".",1)#Split only once, hopefully at the .wav or whatever the format was
 
-outname = splitname[0] + "_encoded1" + "." + splitname[1]#Should allow to keep file format, weird behavior if periods in name.
+outname = splitname[0] + "_encoded" + str(NUMBER_OF_BITS) + "." + splitname[1]#Should allow to keep file format, weird behavior if periods in name.
 with open(outname, 'wb') as f:
     f.write(data)
