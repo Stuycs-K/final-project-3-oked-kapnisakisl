@@ -2,7 +2,6 @@ import sys
 ###GLOBAL VARIABLES!!!
 HEADER_LEN = 260000
 NUMBER_OF_BITS = 1
-print(len(sys.argv))
 message = ""
 if(len(sys.argv) > 4 or len(sys.argv) < 3):# default is 1 when no args, 2 means one thing, so need 3
     print("Args entered incorrectly; Should be: make decode ARGS=\"<FILE> <FILETOWRITE> <OPTIONALBITS>\"")
