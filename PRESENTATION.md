@@ -28,8 +28,9 @@ If we were to write the letter `a` into this encoding system, we would need 8 by
 
 In a sample audio file, it would look like this:
 
-|0|0|0|1|0|0|1|0|
+|128|64|32|16|8|4|2|1|
 |-|-|-|-|-|-|-|-|
+|0|0|0|1|0|0|1|0|
 |1|0|1|0|0|0|1|0|
 |0|0|1|1|0|0|0|0|
 |1|1|0|1|0|1|0|0|
