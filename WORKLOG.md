@@ -32,7 +32,11 @@
 
 ### 5-31-23
 
--Added project name
+- Added project name
+
+### 6-1-23 
+
+- Added image repository, worked on README and presentation.
 
 ## Lefteri Kapnisakis
 
