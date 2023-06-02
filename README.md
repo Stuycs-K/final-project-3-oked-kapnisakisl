@@ -14,7 +14,7 @@ Coded in python without libraries, compilable using make. WAV files for audio re
 To Encode a File into Audio:
 - `make encode ARGS="<MESSAGE_FILE> <AUDIO_FILE> <OPTIONALBITS>"`
 
-Setting OPTIONALBITS, of course, is not required. The default bit usage is 1 bit of encoded data per byte, and can also be optionally set to 2, or 4. This also changes the name of the file, which exhibits the following format:
+Setting OPTIONALBITS, of course, is not required. The default bit usage is 1 bit of encoded data per byte, and can also be optionally set to 2, or 4. Encoding with any bit usage also outputs a file with a different name, which exhibits the following format:
 
 - `<ORIGINAL_FILENAME>_encoded<BIT_USAGE_COUNT>.wav`
 
