@@ -22,3 +22,9 @@ To Decode a File into Audio:
 - `make decode ARGS="<ENCODED_FILE> <DESTINATION_FILE> <OPTINALBITS>"`
 
 If you want the decoded message to make sense, setting decode bit usage to encode bit usage is reccomended.
+
+## Links!!!
+
+Presentation: https://github.com/Stuycs-K/final-project-3-oked-kapnisakisl/blob/main/PRESENTATION.md
+
+Homework: https://github.com/Stuycs-K/final-project-3-oked-kapnisakisl/blob/main/HOMEWORK.md
