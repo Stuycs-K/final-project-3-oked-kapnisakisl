@@ -4,7 +4,7 @@ Attempt to decode the `HWaudio.wav` file provided in the repository.
 
 ## Questions
 
-### How many bits where used?
+### How many bits were used?
 
 ### What is the hidden flag?
 
