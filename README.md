@@ -18,7 +18,7 @@ Setting OPTIONALBITS, of course, is not required. The default bit usage is 1 bit
 
 - `<ORIGINAL_FILENAME>_encoded<BIT_USAGE_COUNT>.wav`
 
-To Decode a File into Audio:
+To Decode a File from Audio:
 - `make decode ARGS="<ENCODED_FILE> <DESTINATION_FILE> <OPTINALBITS>"`
 
 If you want the decoded message to make sense, setting decode bit usage to encode bit usage is reccomended.
