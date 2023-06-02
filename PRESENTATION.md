@@ -26,6 +26,20 @@ LSB stegonaraphy works similarly to the way that we did image steganography, by 
 
 We write the message into the last bit (or bits), and reserve the rightmost least signifcant bit to indicate when to stop reading.
 
+If we were to write the letter `a` into this encoding system, we would need 8 bytes of audio data! For every byte of audio data here, we would use 1 bit, and each character byte is comprised of 8 bits. So for 8 of the audio bytes, in the 7th bit going left to right, we must put in this sequence of bits: `1100001`
+
+In a sample audio file, it would look like this:
+
+|0|0|0|1|0|0|1|0|
+|-|-|-|-|-|-|-|-|
+|1|0|1|0|0|0|1|0|
+|0|0|1|1|0|0|0|0|
+|1|1|0|1|0|1|0|0|
+|1|0|1|1|0|0|0|0|
+|1|1|1|1|1|0|0|0|
+|1|0|1|1|0|0|0|0|
+|0|1|1|1|0|0|1|0|
+| | | | | | |^Message bit|^stop bit|
 #
 - What is audio steg? (hiding things)
 - How does LSB work? (draw/type out how bits are placed in the file to put message together)
