@@ -75,6 +75,7 @@ Let's decode this audio and see what we get! After running the following:
 We get this lovely text file!
 
 <img src = "Images/walkable_decoded.png"> </img>
+
 There is some sparse error with characters like `'` (mostly because we suck at working with UTF-8 ASCII), but besides that, the text of this legendary piece of literature remains!
 
 Now, while we recommend the 1-bit option the most, we <b>CAN</b> choose to encode using even <b>MORE</b> bits. We can also try encoding with 2 or 4 bits of data per byte, so let's try those!
